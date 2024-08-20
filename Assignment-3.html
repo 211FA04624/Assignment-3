@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Set minimum height for viewport coverage */
+  }
+
+  .container {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(227, 196, 224);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .button {
+    background-color: rgb(181, 210, 223);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px auto; /* Center the button horizontally within the container */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: rgb(153, 180, 192);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <button class="button" onclick="changeState()">Click Me</button>
+  <p id="text">Text</p>
+</div>
+
+<script>
+  let state = false;
+
+  function changeState() {
+    const button = document.querySelector('.button');
+    const text = document.getElementById('text');
+    const container = document.querySelector('.container');
+
+    if (state) {
+      button.textContent = 'Click Me';
+      text.textContent = 'Text';
+      container.style.backgroundColor = 'yellow';
+    } else {
+      button.textContent = 'Clicked';
+      text.textContent = 'Changed Text';
+      container.style.backgroundColor = 'green';
+    }
+
+    state = !state;
+  }
+</script>
+
+</body>
+</html>
